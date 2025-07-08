@@ -67,6 +67,447 @@ const data = [
   },
 ];
 
+function DestinationsSection() {
+  const destinations = [
+    {
+      title: "Bali, Indonesia",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      description:
+        "Tropical paradise with stunning beaches and vibrant culture.",
+    },
+    {
+      title: "Santorini, Greece",
+      image:
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      description:
+        "Famous for its whitewashed houses and breathtaking sunsets.",
+    },
+    {
+      title: "Kyoto, Japan",
+      image:
+        "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80",
+      description: "Historic temples, cherry blossoms, and tranquil gardens.",
+    },
+    {
+      title: "Banff, Canada",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+      description:
+        "Majestic mountains, turquoise lakes, and outdoor adventures.",
+    },
+    {
+      title: "Cape Town, South Africa",
+      image:
+        "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80",
+      description: "Iconic Table Mountain and beautiful coastal scenery.",
+    },
+    {
+      title: "Rome, Italy",
+      image:
+        "https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=600&q=80",
+      description: "Ancient ruins, world-class cuisine, and vibrant city life.",
+    },
+  ];
+
+  return (
+    <section className="w-full py-16 px-4 sm:px-8 bg-white/90 flex flex-col items-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-900 mb-10 text-center tracking-tight">
+        Destinations
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mb-10">
+        {destinations.map((dest, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group"
+          >
+            <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+              <img
+                src={dest.image}
+                alt={dest.title}
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+            <div className="p-5 flex flex-col flex-1">
+              <h3 className="text-xl font-bold text-indigo-900 mb-2 group-hover:text-amber-500 transition-colors">
+                {dest.title}
+              </h3>
+              <p className="text-gray-600 mb-4 flex-1">{dest.description}</p>
+              <button className="mt-auto px-4 py-2 rounded-full bg-amber-400 text-indigo-900 font-bold shadow hover:bg-indigo-900 hover:text-white transition-all duration-200">
+                Explore
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="px-8 py-3 rounded-full font-bold text-lg bg-gradient-to-r from-amber-400 via-pink-400 to-indigo-500 text-white shadow-lg transition-all duration-300 hover:from-white hover:to-white hover:text-indigo-600 hover:scale-105 border-none outline-none">
+        Explore All Destinations
+      </button>
+    </section>
+  );
+}
+
+function ActivitiesSection() {
+  const activities = [
+    {
+      name: "Hiking",
+      color: "from-green-400 to-green-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-6 0v-1m6 0V7a3 3 0 00-6 0v9"
+          />
+        </svg>
+      ),
+      description: "Explore scenic trails and breathtaking peaks.",
+    },
+    {
+      name: "Desert",
+      color: "from-yellow-400 to-yellow-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 21h18M4 17l4-4 4 4 4-4 4 4"
+          />
+        </svg>
+      ),
+      description: "Experience the magic of the dunes and starry nights.",
+    },
+    {
+      name: "Mountains",
+      color: "from-blue-400 to-blue-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 17l6-6 4 4 8-8"
+          />
+        </svg>
+      ),
+      description: "Conquer majestic summits and enjoy fresh air.",
+    },
+    {
+      name: "Ocean",
+      color: "from-cyan-400 to-cyan-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 20s1-2 5-2 5 2 9 2 5-2 5-2"
+          />
+        </svg>
+      ),
+      description: "Dive into crystal clear waters and marine life.",
+    },
+    {
+      name: "Beach",
+      color: "from-pink-400 to-pink-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 21h18M4 17l4-4 4 4 4-4 4 4"
+          />
+        </svg>
+      ),
+      description: "Relax on golden sands and soak up the sun.",
+    },
+    {
+      name: "Relax",
+      color: "from-purple-400 to-purple-700",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8 15s1.5-2 4-2 4 2 4 2"
+          />
+        </svg>
+      ),
+      description: "Unwind and rejuvenate with peaceful escapes.",
+    },
+  ];
+
+  // Infinite auto-scroll logic
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+    let frame: number;
+    const speed = 1; // px per frame
+    let isHovered = false;
+
+    const scrollStep = () => {
+      if (!isHovered) {
+        scrollContainer.scrollLeft += speed;
+        // If reached end, reset to start for infinite loop
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
+        }
+      }
+      frame = requestAnimationFrame(scrollStep);
+    };
+    frame = requestAnimationFrame(scrollStep);
+
+    // Pause on hover
+    const onMouseEnter = () => (isHovered = true);
+    const onMouseLeave = () => (isHovered = false);
+    scrollContainer.addEventListener("mouseenter", onMouseEnter);
+    scrollContainer.addEventListener("mouseleave", onMouseLeave);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      scrollContainer.removeEventListener("mouseenter", onMouseEnter);
+      scrollContainer.removeEventListener("mouseleave", onMouseLeave);
+    };
+  }, []);
+
+  // Duplicate activities for seamless infinite scroll
+  const activityList = [...activities, ...activities];
+
+  return (
+    <section className="relative w-full pt-20 pb-12 px-0 bg-gradient-to-b from-indigo-100 via-white to-indigo-950 overflow-hidden">
+      {/* Decorative SVG backgrounds */}
+      <svg
+        className="absolute left-0 top-0 w-96 h-96 opacity-20 -z-10"
+        viewBox="0 0 400 400"
+        fill="none"
+      >
+        <circle cx="200" cy="200" r="200" fill="#a5b4fc" />
+      </svg>
+      <svg
+        className="absolute right-0 bottom-0 w-96 h-96 opacity-10 -z-10"
+        viewBox="0 0 400 400"
+        fill="none"
+      >
+        <rect width="400" height="400" rx="200" fill="#fbbf24" />
+      </svg>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-900 mb-12 text-center tracking-tight relative z-10">
+        Activities
+      </h2>
+      <div
+        ref={scrollRef}
+        className="w-full overflow-x-scroll scrollbar-hide"
+        style={{
+          WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
+      >
+        <div
+          className="flex gap-8 min-w-[1200px] py-2 px-8"
+          style={{ width: "max-content" }}
+        >
+          {activityList.map((activity, idx) => (
+            <div
+              key={idx}
+              className={`flex-shrink-0 w-64 sm:w-72 rounded-3xl shadow-xl bg-gradient-to-br ${activity.color} text-white relative group transition-transform duration-300 hover:scale-105`}
+              style={{ minHeight: "320px" }}
+            >
+              <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity">
+                {activity.icon}
+              </div>
+              <div className="flex flex-col justify-end h-full p-8 z-10 relative">
+                <div className="mb-6">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/20 mb-4 mx-auto">
+                    {activity.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-center drop-shadow-lg">
+                    {activity.name}
+                  </h3>
+                  <p className="text-white/90 text-center text-base">
+                    {activity.description}
+                  </p>
+                </div>
+                <button className="mt-auto px-5 py-2 rounded-full bg-white/90 text-indigo-900 font-bold shadow hover:bg-amber-400 hover:text-white transition-all duration-200 mx-auto">
+                  Explore
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Hide scrollbar for all browsers */}
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="w-full bg-indigo-950 text-white pt-12 pb-6 px-4 sm:px-8 mt-0 border-t border-indigo-900">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
+        {/* Branding and tagline */}
+        <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
+          <div className="flex items-center gap-2 mb-2">
+            <img src="/vite.svg" alt="Wanderer Logo" className="h-8 w-8" />
+            <span className="text-2xl font-bold tracking-wide">Wanderer</span>
+          </div>
+          <span className="text-sm text-indigo-200 max-w-xs text-center md:text-left">
+            Explore the world with us. Your adventure starts here.
+          </span>
+        </div>
+        {/* Navigation links */}
+        <div className="flex flex-col sm:flex-row gap-6 md:gap-12 items-center md:items-start">
+          <div className="flex flex-col gap-2">
+            <span className="font-semibold text-indigo-200 mb-1">
+              Quick Links
+            </span>
+            <a href="#" className="hover:text-amber-400 transition">
+              Home
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Destinations
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Activities
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              About
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Contact
+            </a>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-semibold text-indigo-200 mb-1">
+              Resources
+            </span>
+            <a href="#" className="hover:text-amber-400 transition">
+              Blog
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Careers
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Support
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-amber-400 transition">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+        {/* Social icons */}
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <span className="font-semibold text-indigo-200 mb-1">Follow Us</span>
+          <div className="flex gap-4">
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="hover:text-amber-400 transition"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22.46 5.92c-.8.36-1.66.6-2.56.71a4.48 4.48 0 0 0 1.97-2.48 8.93 8.93 0 0 1-2.83 1.08A4.48 4.48 0 0 0 16.11 4c-2.48 0-4.49 2.01-4.49 4.49 0 .35.04.7.11 1.03-3.73-.19-7.04-1.97-9.25-4.68a4.48 4.48 0 0 0-.61 2.26c0 1.56.8 2.94 2.01 3.75-.74-.02-1.44-.23-2.05-.57v.06c0 2.18 1.55 4 3.6 4.41-.38.1-.78.16-1.19.16-.29 0-.57-.03-.85-.08.57 1.77 2.23 3.06 4.2 3.1A8.98 8.98 0 0 1 2 19.54c-.29 0-.57-.02-.85-.05A12.7 12.7 0 0 0 8.29 21.5c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54.8-.58 1.5-1.3 2.05-2.12z" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="hover:text-amber-400 transition"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="hover:text-amber-400 transition"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.13 4.602.388 3.635 1.355 2.668 2.322 2.41 3.495 2.352 4.772.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.058 1.277.316 2.45 1.283 3.417.967.967 2.14 1.225 3.417 1.283C8.332 23.987 8.741 24 12 24c3.259 0 3.668-.013 4.948-.072 1.277-.058 2.45-.316 3.417-1.283.967-.967 1.225-2.14 1.283-3.417.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.058-1.277-.316-2.45-1.283-3.417-.967-.967-2.14-1.225-3.417-1.283C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.2-11.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="hover:text-amber-400 transition"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.845-1.563 3.043 0 3.604 2.004 3.604 4.609v5.587z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="mt-10 border-t border-indigo-900 pt-6 text-center text-sm text-indigo-300">
+        &copy; {new Date().getFullYear()} Wanderer. All rights reserved.
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const adjustedIndex = (currentSlide - 1 + data.length) % data.length;
@@ -446,6 +887,10 @@ function App() {
           </div>
         </div>
       </div>
+      {/* Destinations Section */}
+      <DestinationsSection />
+      <ActivitiesSection />
+      <Footer />
     </>
   );
 }
