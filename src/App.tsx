@@ -70,18 +70,16 @@ const data = [
 function DestinationsSection() {
   const destinations = [
     {
-      title: "Bali, Indonesia",
+      title: "Sajek, Bandarban",
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-      description:
-        "Tropical paradise with stunning beaches and vibrant culture.",
+      description: "Vast Mountains and Clouds At The Cliff!",
     },
     {
-      title: "Santorini, Greece",
+      title: "Cox's Bazaar, Chittagong",
       image:
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-      description:
-        "Famous for its whitewashed houses and breathtaking sunsets.",
+      description: "Tropical paradise with stunning cou and vibrant culture",
     },
     {
       title: "Kyoto, Japan",
